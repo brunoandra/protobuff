@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  cloud:
+    stream:
+      bindings:
+        save-person:
+          destination: save-person-exchange
+          contentType: application/protobuf
+          binder: rabbit
